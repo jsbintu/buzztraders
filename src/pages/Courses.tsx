@@ -32,6 +32,39 @@ const courses = [
   },
 ];
 
+const masterclassLessons = [
+  {
+    title: 'Market Foundations & Trade Setup',
+    description: 'Core market structure, order types, and how to build a repeatable setup.',
+    duration: '45 min',
+  },
+  {
+    title: 'Chart Reading & Trend Mapping',
+    description: 'Support/resistance, trendlines, and identifying high-probability zones.',
+    duration: '50 min',
+  },
+  {
+    title: 'Options Mechanics Made Simple',
+    description: 'Greeks, volatility, and selecting the right contract for the trade.',
+    duration: '55 min',
+  },
+  {
+    title: 'Entries, Exits & Risk Control',
+    description: 'Position sizing, stop placement, and managing winners/losers.',
+    duration: '40 min',
+  },
+  {
+    title: 'Multi-Timeframe Confirmation',
+    description: 'Aligning higher and lower timeframes to improve timing.',
+    duration: '35 min',
+  },
+  {
+    title: 'Trade Review & Performance Tracking',
+    description: 'Journaling, metrics, and refining your edge over time.',
+    duration: '45 min',
+  },
+];
+
 const Courses = () => {
   return (
     <div className="py-12">
@@ -99,6 +132,31 @@ const Courses = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Masterclass Lessons */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Masterclass Lessons</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Each masterclass module is now its own focused lesson so you can learn at your
+              own pace.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {masterclassLessons.map((lesson, index) => (
+              <div key={lesson.title} className="bg-white rounded-lg shadow-md p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-semibold text-amber-600">
+                    Lesson {index + 1}
+                  </span>
+                  <span className="text-sm text-gray-500">{lesson.duration}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{lesson.title}</h3>
+                <p className="text-gray-600 text-sm">{lesson.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
